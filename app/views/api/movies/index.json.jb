@@ -1,0 +1,9 @@
+@movies.map do |movie|
+  {
+    title: movie.title,
+    year: movie.year,
+    picture: movie.image,
+    thumbs_up: movie.thumbs_up,
+    thumbs_down: movie.thumbs_down,
+  }
+end

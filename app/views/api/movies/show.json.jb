@@ -1,0 +1,7 @@
+{
+  title: movie["Title"],
+  director: movie["Director"],
+  year: movie["Released"],
+  picture: movie["Poster"],
+  description: movie["Plot"],
+}

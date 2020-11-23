@@ -1,0 +1,7 @@
+@message.map do |movie|
+  {
+    title: movie["Title"],
+    year: movie["Year"],
+    picture: movie["Poster"],
+  }
+end
