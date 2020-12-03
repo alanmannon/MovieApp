@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   namespace :api do
     get "/search" => "searches#index"
+    get "/search:id" => "searches#show"
 
     get "/movies" => "movies#index"
-    get "/movies/:id" => "movies#show"
+    post "/movies" => "movies#create"
+    patch "/movies/:id" => "movies#update"
   end
 end

@@ -1,0 +1,8 @@
+{
+  title: @movie["Title"],
+  year: @movie["Year"],
+  director: @movie["Director"],
+  description: @movie["Plot"],
+  thumbs_up: @thumbs[:thumbs_up],
+  thumbs_down: @thumbs[:thumbs_down],
+}

@@ -1,7 +1,4 @@
 {
-  title: movie["Title"],
-  director: movie["Director"],
-  year: movie["Released"],
-  picture: movie["Poster"],
-  description: movie["Plot"],
+  thumbs_up: @movie["thumbs_up"],
+  thumbs_down: @movie["thumbs_down"],
 }
