@@ -15,13 +15,23 @@ class Api::SearchesController < ApplicationController
 
     response = HTTP.get("http://www.omdbapi.com/?apikey=#{Rails.application.credentials.OMDb_api[:api_key]}&i=#{imdb}")
 
-    @movie = response.parse
-    if Movie.find_by(imdb: params[:id])
-      @thumbs = Movie.find_by(imdb: params[:id])
-    else
-      @thumbs = ({ "thumbs_up": 0, "thumbs_down": "0" })
-    end
+    @api_movie = response.parse
+    db_movie = Movie.find_by(imdb: imdb)
 
+    if db_movie
+      @movie = db_movie
+    else
+      new_movie = Movie.new(
+        title: @api_movie["Title"],
+        year: @api_movie["Year"],
+        image: @api_movie["Poster"],
+        imdb: @api_movie["imdbID"],
+        thumbs_up: 0,
+        thumbs_down: 0,
+      )
+      new_movie.save
+      @movie = new_movie
+    end
     render "show.json.jb"
   end
 end

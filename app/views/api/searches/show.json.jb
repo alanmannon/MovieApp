@@ -1,8 +1,9 @@
 {
-  title: @movie["Title"],
-  year: @movie["Year"],
-  director: @movie["Director"],
-  description: @movie["Plot"],
-  thumbs_up: @thumbs[:thumbs_up],
-  thumbs_down: @thumbs[:thumbs_down],
+  title: @movie[:title],
+  year: @movie[:year],
+  director: @api_movie["Director"],
+  description: @api_movie["Plot"],
+  thumbs_up: @movie[:thumbs_up],
+  thumbs_down: @movie[:thumbs_down],
+  image: @movie[:image],
 }
