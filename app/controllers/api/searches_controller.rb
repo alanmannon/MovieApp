@@ -3,7 +3,9 @@ class Api::SearchesController < ApplicationController
     search = params[:search]
     search = search.gsub(" ", "+")
 
-    response = HTTP.get("http://www.omdbapi.com/?apikey=#{Rails.application.credentials.OMDb_api[:api_key]}&s=#{search}")
+    # response = HTTP.get("http://www.omdbapi.com/?apikey=#{Rails.application.credentials.OMDb_api[:api_key]}&s=#{search}")
+
+    response = HTTP.get("http://www.omdbapi.com/?apikey=[#{Rails.application.credentials.OMDb_api[:api_key]}]&s=#{search}")
 
     parsed = response.parse
     @movies = parsed["Search"]
@@ -12,6 +14,8 @@ class Api::SearchesController < ApplicationController
 
   def show
     imdb = params[:id]
+
+    # response = HTTP.get("http://www.omdbapi.com/?apikey=#{Rails.application.credentials.OMDb_api[:api_key]}&i=#{imdb}")
 
     response = HTTP.get("http://www.omdbapi.com/?apikey=#{Rails.application.credentials.OMDb_api[:api_key]}&i=#{imdb}")
 
