@@ -1,7 +1,7 @@
 # Movie.Info
 
 Movie.Info is a Ruby on Rails web application that allows you to search an online database for a movie and then rate that movie with either a thumbs up or thumbs down.
-
+This application is deployed to https://yearonemovieinfo.herokuapp.com/ if you would like to try it out without setting it up locally.
 ## Installation
 ______
 

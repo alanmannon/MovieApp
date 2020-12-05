@@ -7,8 +7,8 @@ class Api::MoviesController < ApplicationController
   def create
     if !Movie.find_by(imdb: params[:imdb])
       # response = HTTP.get("http://www.omdbapi.com/?apikey=#{Rails.application.credentials.OMDb_api[:api_key]}&i=#{params[:imdb]}")
-      
-      response = HTTP.get("http://www.omdbapi.com/?apikey=#{Rails.application.credentials.OMDb_api[:api_key]}&i=#{params[:imdb]}")
+
+      response = HTTP.get("http://www.omdbapi.com/?apikey=[YOUR API KEY HERE]&i=#{params[:imdb]}")
 
       omdb = response.parse
       @movie = Movie.new(
